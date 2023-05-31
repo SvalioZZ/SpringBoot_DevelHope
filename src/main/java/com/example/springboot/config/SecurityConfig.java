@@ -39,6 +39,8 @@ public class SecurityConfig {
                         authorize.requestMatchers("/api/meal/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                                 .and().httpBasic();
+                        // added disabled method for http requests
+                        http.csrf().disable();
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
