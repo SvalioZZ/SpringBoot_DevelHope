@@ -1,4 +1,4 @@
-package com.example.springboot.controller.myController;
+package com.example.myspringboot.controller;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
