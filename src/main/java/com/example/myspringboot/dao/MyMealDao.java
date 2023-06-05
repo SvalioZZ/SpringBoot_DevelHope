@@ -1,5 +1,6 @@
 package com.example.myspringboot.dao;
 
+import com.example.myspringboot.model.MyMeal;
 import com.example.springboot.model.Meal;
 import org.springframework.stereotype.Repository;
 
@@ -8,13 +9,13 @@ import java.util.List;
 
 @Repository
 public class MyMealDao {
-    private List<Meal> meals = new ArrayList<>();
+    private List<MyMeal> meals = new ArrayList<>();
     
-    public List<Meal> getMeals() {
+    public List<MyMeal> getMeals() {
         return this.meals;
     }
     
-    public void addMeal(Meal meal) {
+    public void addMeal(MyMeal meal) {
         if (meal == null) throw new IllegalArgumentException("Meal must not be null");
         if (meal.getName() == null) throw new IllegalArgumentException("Meal name must not be null");
         if (meal.getDescription() == null) throw new IllegalArgumentException("Meal description must not be null");
@@ -23,11 +24,11 @@ public class MyMealDao {
         this.meals.add(meal);
     }
     
-    public void deleteMeal(Meal meal) {
+    public void deleteMeal(MyMeal meal) {
         this.meals.remove(meal);
     }
     
-    public void updateMeal(Meal meal) {
+    public void updateMeal(MyMeal meal) {
         this.meals.removeIf(m -> m.getName().equals(meal.getName()));
         this.meals.add(meal);
     }
